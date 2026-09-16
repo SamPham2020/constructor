@@ -1,0 +1,47 @@
+main() {
+  // conditions in Lists 
+  bool isSad = false; 
+  var items  = ['milk', 'juice', if (isSad) 'beer']; 
+  
+// [milk, juice]
+  print(items);
+  
+  isSad = true; 
+  var items2  = ['milk', 'juice', if (isSad) 'beer']; 
+
+// [milk, juice, beer]
+  print(items2);
+
+
+  // where to filter 
+  List <int> nums = [1, 4,2,5,5];
+  List<int> evens = nums.where((n) => n.isEven).toList(); 
+
+// [4, 2]
+  print(evens); 
+  // combine lists 
+  List l1 = ['a', 'b', 'c']; 
+  List l2 = ['c', 'd', 'f', 'e']; 
+  List l3 = ['', 'y', 'z']; 
+
+  List combinedLists = [...l1, ...l2, ...l3]; 
+  //[a, b, c, c, d, f, e, , y, z]
+  print(combinedLists); 
+  List newList = ['newOne', ...combinedLists]; 
+// [newOne, a, b, c, c, d, f, e, , y, z]
+  print(newList);
+  //list.map
+  List<int> list = [1, 2,3]; 
+  // transform each to something
+  var doubleList = list.map((n) => n *2);
+  //(2, 4, 6) 
+  print(doubleList);
+
+  /**
+   * immutable cannot change put cons
+   */
+  var listFill = List<int>.filled(5, 0); 
+  //[0, 0, 0, 0, 0]
+  print(listFill);  
+
+}
